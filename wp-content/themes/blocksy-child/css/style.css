@@ -1,0 +1,188 @@
+/*
+Theme Name: Blocksy Child
+Template: blocksy
+Version: 1.0
+*/
+
+::selection {
+    background: #c2b7a9;
+    color: #2e1f17;
+}
+
+::-moz-selection {
+    background: #c2b7a9;
+    color: #2e1f17;
+}
+
+#header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    z-index: 1111;
+}
+
+#footer {
+    border-top: 1px solid var(--gold);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.25s,
+        color 0.25s,
+        border 0.25s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.ct-footer [data-row="middle"] {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.ct-footer [data-row="middle"] {
+    background: linear-gradient(
+        180deg,
+        #4a2a1e 0%,
+        #2b140e 50%,
+        #0f0705 100%
+    ) !important;
+}
+
+.ct-footer-copyright {
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only))
+    .wp-social-link-instagram {
+    background: none !important;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link {
+    background: none !important;
+}
+
+.wp-block-social-links {
+    margin-bottom: 32px !important;
+}
+
+.elementor-element-6c720d7,
+.elementor-element-3c7b2477 {
+    background:
+        radial-gradient(
+            ellipse 80% 40% at 50% 0%,
+            rgba(245, 220, 170, 0.08) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 60% 30% at 20% 60%,
+            rgba(180, 100, 40, 0.06) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #f7f0ea 0%,
+            #ede0d4 20%,
+            #d4b89a 38%,
+            #8a4a2e 58%,
+            #3d1c0f 78%,
+            #1e0d08 100%
+        );
+    position: relative;
+}
+
+.elementor-element-6c720d7::before,
+.elementor-element-3c7b2477::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Naslov */
+.elementor-element-6c720d7 h2,
+.elementor-element-3c7b2477 h2 {
+    color: #2b140e; /* ostaje taman — funkcioniše na svijetlom dijelu */
+}
+
+.elementor-element-6c720d7 p,
+.elementor-element-3c7b2477 p {
+    color: #f0e6d8; /* topla krema — čitljivo na smeđoj zoni */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ct-section:last-of-type {
+    background: linear-gradient(
+        to bottom,
+        #f5efe9 0%,
+        #f5efe9 60%,
+        #3b1f17 100%
+    );
+}
+
+.btn.secondary {
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    color: #222;
+    box-shadow: 0 6px 14px rgba(122, 44, 44, 0.25);
+}
+
+.btn.secondary:hover {
+    background: #7a2c2c;
+    color: #fff;
+    border-color: #7a2c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(122, 44, 44, 0.35);
+}
+
+.btn.primary {
+    background: #7a2c2c;
+    color: #fff;
+    border: none;
+}
+
+.btn.primary:hover {
+    background: #5c1f1f;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 640px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
