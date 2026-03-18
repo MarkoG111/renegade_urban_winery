@@ -1,0 +1,68 @@
+.pagination {
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-numbers {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    color: #222;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.page-numbers:hover {
+    background: #7a2c2c;
+    color: #fff;
+    border-color: #7a2c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(122, 44, 44, 0.25);
+}
+
+.page-numbers.current {
+    background: #7a2c2c;
+    color: #fff;
+    border-color: #7a2c2c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+/* Dots (...) */
+.page-numbers.dots {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: #aaa;
+    cursor: default;
+    pointer-events: none;
+    transform: none;
+}
+
+/* Prev / Next strelice */
+.page-numbers.prev,
+.page-numbers.next {
+    width: auto;
+    padding: 0 18px;
+    gap: 6px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: #444;
+}
+
+.page-numbers.prev:hover,
+.page-numbers.next:hover {
+    color: #fff;
+}
