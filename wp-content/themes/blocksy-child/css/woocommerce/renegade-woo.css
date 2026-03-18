@@ -1,0 +1,553 @@
+/* ==========================================================================
+   RENEGADE URBAN WINERY - WOOCOMMERCE STYLES
+   (Cart, Checkout, Thank You)
+   ========================================================================== */
+
+:root {
+    --woo-burgundy: #4a0e1a;
+    --woo-burgundy-hover: #3a0b14;
+    --woo-gold: #b8922a;
+    --woo-gold-light: #e2d7c7;
+    --woo-cream: #f7f2e8;
+    --woo-ink: #4a3728;
+    --woo-divider: #e2d7c7;
+}
+
+/* ── Global Typography & Headings ───────────────────────────────────── */
+.woocommerce h1.entry-title,
+.woocommerce-page h1,
+.page-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: var(--woo-burgundy);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    text-align: center; /* Centrirano za elegantniji izgled */
+}
+
+.woocommerce h2,
+.woocommerce h3 {
+    color: var(--woo-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 1.2rem;
+}
+
+/* ── Global Buttons (Cart, Checkout, Thank You) ─────────────────────── */
+.woocommerce button.button,
+.woocommerce a.button,
+.woocommerce input.button,
+#payment #place_order {
+    background-color: var(--woo-burgundy) !important;
+    color: var(--woo-cream) !important;
+    padding: 1.2rem 2rem !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    border: 1px solid var(--woo-gold) !important;
+    border-radius: 0px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-align: center;
+}
+
+.add-to-calendar-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #7a1f2b !important;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.add-to-calendar-btn:hover {
+    background: #5c1620 !important;
+    color: #fff !important;
+}
+
+.woocommerce button.button:hover,
+.woocommerce a.button:hover,
+#payment #place_order:hover {
+    background-image: linear-gradient(
+        135deg,
+        transparent 20%,
+        rgba(184, 146, 42, 0.2) 100%
+    ) !important;
+    border-color: var(--woo-gold) !important;
+    color: var(--woo-gold-light) !important;
+    box-shadow: 0 6px 28px rgba(74, 14, 26, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ── 1. CART PAGE ───────────────────────────────────────────────────── */
+.woocommerce-cart table.cart {
+    border: none;
+    border-collapse: collapse;
+}
+
+.woocommerce-cart table.cart th {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--woo-gold);
+    padding-bottom: 1rem;
+}
+
+.woocommerce-cart table.cart td {
+    border-bottom: 1px solid var(--woo-divider);
+    padding: 1.5rem 0;
+    vertical-align: middle;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals {
+    background: white;
+    border: 1px solid var(--woo-divider);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* ── 2. CHECKOUT PAGE (Zadržan tvoj odličan Grid layout) ────────────── */
+.woocommerce-checkout form.woocommerce-checkout {
+    display: grid;
+    grid-template-areas:
+        "details  review"
+        "heading  review"
+        "payment  review";
+    gap: 0 4rem;
+    align-items: start;
+}
+
+.woocommerce-checkout #customer_details {
+    grid-area: details;
+}
+.woocommerce-checkout #order_review {
+    grid-area: review;
+    position: sticky;
+    top: 2rem;
+    background: white;
+    border: 1px solid var(--woo-divider);
+    padding: 2rem;
+}
+
+/* Elegantan gornji border za Order Review */
+.woocommerce-checkout #order_review::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--woo-burgundy),
+        var(--woo-gold),
+        var(--woo-burgundy)
+    );
+}
+
+.woocommerce-checkout .form-row input.input-text,
+.woocommerce-checkout .form-row select,
+.woocommerce-checkout .form-row textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--woo-divider);
+    border-radius: 0;
+    background: white;
+    font-size: 1rem;
+    color: var(--woo-ink);
+}
+
+.woocommerce-checkout .form-row input.input-text:focus {
+    border-color: var(--woo-gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184, 146, 42, 0.08);
+}
+
+/* ── 3. THANK YOU PAGE (Order Received) ─────────────────────────────── */
+.woocommerce-order {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.woocommerce-thankyou-order-received {
+    font-size: 1.5rem;
+    color: var(--woo-burgundy);
+    margin-bottom: 2rem;
+    font-family: serif; /* Daje vinski, klasičan ton */
+}
+
+ul.woocommerce-order-overview {
+    list-style: none;
+    padding: 2rem;
+    margin: 0 0 3rem 0;
+    background: var(--woo-cream);
+    border: 1px solid var(--woo-divider);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+ul.woocommerce-order-overview li {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--woo-ink);
+    border-right: 1px solid var(--woo-divider);
+    padding: 0 2rem;
+}
+
+ul.woocommerce-order-overview li:last-child {
+    border-right: none;
+}
+
+ul.woocommerce-order-overview li strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--woo-burgundy);
+    margin-top: 0.5rem;
+}
+
+/* ============================================================
+   RENEGADE WINERY — Checkout Improvements
+   Dodaj ovo NA KRAJ postojećeg woocommerce CSS fajla
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap");
+
+/* ── 1. CHECKOUT naslov ────────────────────────────────────── */
+.woocommerce-checkout h1.entry-title,
+.woocommerce-checkout .page-title,
+.woocommerce-checkout-page h1 {
+    font-family: "Cormorant Garamond", serif !important;
+    font-size: clamp(1.6rem, 5vw, 3.8rem) !important;
+    font-weight: 600 !important;
+    color: var(--woo-burgundy) !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    position: relative;
+    display: block;
+}
+
+/* Zlatna linija ispod naslova */
+.woocommerce-checkout h1.entry-title::after,
+.woocommerce-checkout .page-title::after,
+.woocommerce-checkout-page h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--woo-gold),
+        transparent
+    );
+    margin: 0.7rem auto 0;
+}
+
+/* ── 2. ORDER REVIEW naslov ────────────────────────────────── */
+.woocommerce-checkout #order_review_heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--woo-burgundy) !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--woo-divider);
+}
+
+/* ── 3. ORDER REVIEW tabela ────────────────────────────────── */
+.woocommerce-checkout-review-order-table {
+    width: 100%;
+    border-collapse: collapse !important;
+    margin-bottom: 0 !important;
+}
+
+/* Head */
+.woocommerce-checkout-review-order-table thead th {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: var(--woo-gold) !important;
+    font-weight: 700 !important;
+    padding: 0 0 0.7rem !important;
+    border-bottom: 1px solid var(--woo-gold) !important;
+    border-top: none !important;
+    background: transparent !important;
+}
+
+/* Redovi */
+.woocommerce-checkout-review-order-table tbody td {
+    padding: 0.9rem 0 !important;
+    border-bottom: 1px solid var(--woo-divider) !important;
+    border-top: none !important;
+    font-size: 0.9rem !important;
+    color: var(--woo-ink) !important;
+    vertical-align: middle !important;
+    background: transparent !important;
+}
+
+/* Naziv proizvoda */
+.woocommerce-checkout-review-order-table .product-name {
+    color: var(--woo-burgundy) !important;
+    font-weight: 500 !important;
+}
+
+/* Količina (x5) */
+.woocommerce-checkout-review-order-table .product-name .product-quantity {
+    color: var(--woo-gold) !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+}
+
+/* Subtotal ćelija */
+.woocommerce-checkout-review-order-table .product-total {
+    text-align: right !important;
+    font-weight: 600 !important;
+    white-space: nowrap;
+}
+
+/* Subtotal i Total redovi (tfoot) */
+.woocommerce-checkout-review-order-table tfoot tr th,
+.woocommerce-checkout-review-order-table tfoot tr td {
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid var(--woo-divider) !important;
+    border-top: none !important;
+    font-size: 0.85rem !important;
+    background: transparent !important;
+}
+
+.woocommerce-checkout-review-order-table tfoot tr th {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    color: var(--woo-gold) !important;
+    font-weight: 700 !important;
+}
+
+.woocommerce-checkout-review-order-table tfoot tr td {
+    text-align: right !important;
+    color: var(--woo-ink) !important;
+}
+
+/* Total red */
+.woocommerce-checkout-review-order-table tfoot .order-total th,
+.woocommerce-checkout-review-order-table tfoot .order-total td {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: var(--woo-burgundy) !important;
+    border-bottom: none !important;
+    padding-top: 1rem !important;
+}
+
+.woocommerce-checkout-review-order-table
+    tfoot
+    .order-total
+    td
+    .woocommerce-Price-amount {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    color: var(--woo-burgundy) !important;
+}
+
+/* ── 4. PAYMENT SECTION ────────────────────────────────────── */
+#payment {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-top: 1.5rem !important;
+}
+
+/* Payment methods lista */
+#payment ul.payment_methods {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 1.25rem !important;
+    border: 1px solid var(--woo-divider) !important;
+    background: white !important;
+}
+
+/* Svaka metoda plaćanja */
+#payment ul.payment_methods li {
+    border-bottom: 1px solid var(--woo-divider) !important;
+}
+#payment ul.payment_methods li:last-child {
+    border-bottom: none !important;
+}
+
+/* Label za payment metodu */
+#payment ul.payment_methods li label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.25rem !important;
+    cursor: pointer !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: var(--woo-ink) !important;
+    transition: background 0.2s ease !important;
+    position: relative;
+}
+#payment ul.payment_methods li label:hover {
+    background: rgba(184, 146, 42, 0.05) !important;
+}
+
+/* Sakrij default radio input */
+#payment ul.payment_methods li input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Custom radio indicator */
+#payment ul.payment_methods li label::before {
+    content: "" !important;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--woo-gold) !important;
+    background: white !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+/* Checked state */
+#payment ul.payment_methods li input[type="radio"]:checked + label,
+#payment
+    ul.payment_methods
+    li.payment_method_stripe
+    input[type="radio"]:checked
+    ~ label {
+    color: var(--woo-burgundy) !important;
+    background: rgba(74, 14, 26, 0.03) !important;
+}
+#payment ul.payment_methods li input[type="radio"]:checked + label::before {
+    background: var(--woo-burgundy) !important;
+    border-color: var(--woo-burgundy) !important;
+    box-shadow: inset 0 0 0 4px white !important;
+}
+
+/* Payment box (Stripe form, test mode notice) */
+.payment_box {
+    background: #faf8f4 !important;
+    border: none !important;
+    border-top: 1px solid var(--woo-divider) !important;
+    padding: 1.25rem !important;
+    margin: 0 !important;
+}
+
+.payment_box p,
+.payment_box .woocommerce-info {
+    font-size: 0.82rem !important;
+    color: var(--woo-ink) !important;
+    line-height: 1.6 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+/* "Test mode:" bold label */
+.payment_box p strong {
+    color: var(--woo-gold) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Stripe saved card radio buttons unutar payment_box */
+.payment_box .wc-saved-payment-methods {
+    list-style: none !important;
+    padding: 0.75rem 0 0 !important;
+    margin: 0.5rem 0 0 !important;
+    border-top: 1px solid var(--woo-divider) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+.payment_box .wc-saved-payment-methods li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.6rem 0.75rem !important;
+    border: 1px solid var(--woo-divider) !important;
+    background: white !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s ease !important;
+}
+.payment_box .wc-saved-payment-methods li:hover {
+    border-color: var(--woo-gold) !important;
+}
+
+/* Sakrij browser radio za saved cards */
+.payment_box .wc-saved-payment-methods li input[type="radio"] {
+    accent-color: var(--woo-burgundy) !important;
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+}
+
+.payment_box .wc-saved-payment-methods li label {
+    font-size: 0.82rem !important;
+    color: var(--woo-ink) !important;
+    cursor: pointer !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+    display: inline !important;
+}
+
+/* ── 5. Privacy text ───────────────────────────────────────── */
+.woocommerce-checkout .woocommerce-privacy-policy-text {
+    font-size: 0.78rem !important;
+    color: #9a8878 !important;
+    line-height: 1.7 !important;
+    margin-top: 1.25rem !important;
+    border-top: 1px solid var(--woo-divider) !important;
+    padding-top: 1rem !important;
+}
+.woocommerce-checkout .woocommerce-privacy-policy-text a {
+    color: var(--woo-gold) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+#wc-stripe-express-checkout-button-separator {
+    display: none !important;
+}
+
+/* ── Responsive prilagođavanja ──────────────────────────────────────── */
+@media (max-width: 960px) {
+    .woocommerce-checkout form.woocommerce-checkout {
+        grid-template-columns: 1fr;
+        grid-template-areas: "details" "heading" "review" "payment";
+    }
+    ul.woocommerce-order-overview {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+    ul.woocommerce-order-overview li {
+        border-right: none;
+        border-bottom: 1px solid var(--woo-divider);
+        padding: 1rem 0;
+    }
+}
