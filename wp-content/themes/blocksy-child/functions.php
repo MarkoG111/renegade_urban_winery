@@ -157,7 +157,7 @@ function format_event_date($event_id = null)
     return date_i18n('F j, g:i A', $timestamp);
 }
 
-require_once get_stylesheet_directory() . '/inc/tickets.php';
+require_once WP_PLUGIN_DIR . '/rw-tickets/tickets.php';
 
 add_action('admin_menu', 'rw_ticket_menu');
 
