@@ -1,0 +1,358 @@
+/* ============================================
+   EVENTS PAGE – RESPONSIVE CSS
+   Mobile First: 320px → Tablet: 768px → Desktop: 1024px+
+   ============================================ */
+
+/* ── HERO ── */
+.events-hero {
+    /* background-image: url("/wordpress-6.9/wp-content/uploads/2026/02/hero-image-1536x864.png"); */
+    background-image: url("http://renegade-winary.infinityfreeapp.com/wp-content/uploads/2026/02/hero-image-1536x864.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    padding: 180px 20px;
+}
+
+.events-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.events-hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.events-hero-inner h1 {
+    font-family: "Nunito", Sans-serif;
+    font-size: 45px;
+    color: #dfdfe2;
+    letter-spacing: -1px;
+}
+
+.events-hero-inner p {
+    font-family: "Nunito", Sans-serif;
+    color: #dfdfe2;
+    font-size: 19px;
+    opacity: 0.9;
+}
+
+/* ── INTRO ── */
+.events-intro {
+    padding: 80px 20px 40px;
+    background: #f9f7f2;
+}
+
+.events-intro p {
+    font-family: "Nunito", Sans-serif;
+    max-width: 600px;
+    font-size: 16px;
+    color: #666;
+}
+
+.events-intro h2 {
+    font-family: "Nunito", Sans-serif;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+/* ── LAYOUT ── */
+.events-container {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.events-page {
+    padding: 40px 0 80px;
+}
+
+/* ── FILTER PANEL ── */
+.events-filter-panel {
+    margin-bottom: 40px;
+}
+
+.filter-label {
+    font-family: "Nunito", Sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.events-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.filter-btn {
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    border: 1.5px solid #ddd;
+    border-radius: 50px;
+    background: transparent;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: #8b1a1a;
+    color: #8b1a1a;
+}
+
+.filter-btn.active {
+    background: #8b1a1a;
+    border-color: #8b1a1a;
+    color: #fff;
+}
+
+/* ── GRID ── */
+.events-grid {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* ── PAGINATION ── */
+.pagination {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pagination .page-numbers {
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    padding: 8px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    color: #444;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-numbers.current,
+.pagination .page-numbers:hover {
+    background: #8b1a1a;
+    border-color: #8b1a1a;
+    color: #fff;
+}
+
+/* ============================================
+   TABLET  –  max-width: 1024px
+   ============================================ */
+@media (max-width: 1024px) {
+    .events-hero {
+        padding: 130px 24px;
+    }
+
+    .events-hero-inner h1 {
+        font-size: 38px;
+    }
+
+    .events-hero-inner p {
+        font-size: 17px;
+    }
+
+    .events-intro {
+        padding: 60px 24px 32px;
+    }
+
+    .events-intro h2 {
+        font-size: 30px;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+/* ============================================
+   MALI TABLET / VELIKI TELEFON  –  max-width: 768px
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hero */
+    .events-hero {
+        padding: 100px 20px;
+        background-position: center top;
+    }
+
+    .events-hero-inner h1 {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+        line-height: 1.25;
+    }
+
+    .events-hero-inner p {
+        font-size: 15px;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    /* Intro */
+    .events-intro {
+        padding: 48px 20px 28px;
+        text-align: center;
+    }
+
+    .events-intro h2 {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .events-intro p {
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    /* Grid */
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Filters – horizontalno skrolovanje */
+    .events-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 6px;
+        gap: 6px;
+    }
+
+    .events-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        font-size: 13px;
+        padding: 7px 15px;
+        flex-shrink: 0;
+    }
+
+    /* Pagination */
+    .pagination {
+        margin-top: 40px;
+        gap: 4px;
+    }
+
+    .pagination .page-numbers {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+}
+
+/* ============================================
+   MOBILNI  –  max-width: 480px
+   ============================================ */
+@media (max-width: 480px) {
+    /* Hero */
+    .events-hero {
+        padding: 80px 16px;
+    }
+
+    .events-hero-inner h1 {
+        font-size: 26px;
+    }
+
+    .events-hero-inner p {
+        font-size: 14px;
+    }
+
+    /* Intro */
+    .events-intro {
+        padding: 36px 16px 24px;
+    }
+
+    .events-intro h2 {
+        font-size: 21px;
+        line-height: 1.35;
+    }
+
+    .events-intro p {
+        font-size: 14px;
+    }
+
+    /* Container */
+    .events-container {
+        padding: 0 16px;
+    }
+
+    /* Grid – jedna kolona */
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Filter label */
+    .filter-label {
+        font-size: 10px;
+        margin-top: 16px;
+    }
+
+    /* Filters */
+    .events-filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 6px 13px;
+    }
+
+    /* Page */
+    .events-page {
+        padding: 28px 0 60px;
+    }
+
+    /* Pagination */
+    .pagination {
+        margin-top: 32px;
+    }
+
+    .pagination .page-numbers {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+/* ============================================
+   MALI MOBILNI  –  max-width: 360px
+   ============================================ */
+@media (max-width: 360px) {
+    .events-hero-inner h1 {
+        font-size: 22px;
+    }
+
+    .events-hero-inner p {
+        font-size: 13px;
+    }
+
+    .events-intro h2 {
+        font-size: 19px;
+    }
+
+    .events-grid {
+        gap: 12px;
+    }
+}
