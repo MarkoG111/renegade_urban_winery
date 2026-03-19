@@ -204,16 +204,13 @@ Why:
 ### QR Validation
 
 * Valid ticket → marked and consumed
-<img width="500" height="250" alt="3  QR - Valid" src="https://github.com/user-attachments/assets/4337527f-eb1e-4b73-9cb0-587b3bcd38d4" />
 
 * Used ticket → rejected
-<img width="500" height="250" alt="3  QR - Already Used" src="https://github.com/user-attachments/assets/a1936b78-1911-484d-84a4-78fa3bddf5a7" />
 
 ### Admin Dashboard
 
 * Event overview
 * Ticket statistics
-<img width="500" height="300" alt="4  Tickets Dashboard" src="https://github.com/user-attachments/assets/649f37ca-2ddc-4973-b64f-c2fdff788afe" />
 
 * Manual controls
 <img width="900" height="650" alt="4  All Tickets" src="https://github.com/user-attachments/assets/cbd68a58-b354-4f6a-82e7-05dfabf6ea53" />
