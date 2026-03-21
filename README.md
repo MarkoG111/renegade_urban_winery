@@ -224,6 +224,9 @@ https://www.youtube.com/watch?v=TJwqHD2TgBI
 Live Demo:
 https://renegade-winary.infinityfreeapp.com/
 
+PDF Documentation:
+https://renegade-winary.infinityfreeapp.com/Dokumentacija.pdf
+
 ---
 ## 📬 Conclusion
 
