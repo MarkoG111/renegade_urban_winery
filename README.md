@@ -245,25 +245,41 @@ Custom admin panel for managing events and tickets:
 ## 📁 Project Structure
 
 ```text
+```text
 wp-content/
 │
 ├── plugins/
-│   ├── rw-tickets/                  # CORE SYSTEM (ticket logic)
+│   ├── rw-tickets/                  # CORE SYSTEM (ticket generation, validation, seat allocation, REST API)
 │   │   └── tickets.php
 │   │
-│   ├── my-events-plugin/            # Event filtering + AJAX
+│   ├── my-events-plugin/            # AJAX filtering logic for events (category, status, pagination)
 │   │   └── my-events-plugin.php
+│   │   └── event-filter.js
 │   │
-│   ├── advanced-custom-fields/      # Event metadata (date, location, product link)
-│   ├── woocommerce/                 # E-commerce layer
-│   └── woocommerce-gateway-stripe/  # Payment gateway
+│   ├── advanced-custom-fields/      # Event metadata (date, location, product mapping)
+│   ├── woocommerce/                 # E-commerce engine (orders, checkout, cart)
+│   ├── woocommerce-gateway-stripe/  # Stripe payment integration
+│   ├── custom-post-type-ui/         # UI for registering Event CPT and taxonomies
+│   ├── updraftplus/                 # Backup and restore system for WordPress
+│   ├── wp-mail-smtp/                # SMTP email configuration (ensures ticket email delivery)
+│   ├── elementor/                   # Page builder used for layout and UI composition
 │
 └── themes/
     └── blocksy-child/
-        ├── functions.php            # Theme-level integrations
-        ├── scanner.js               # QR scanner frontend
+        ├── functions.php            # Theme hooks, WooCommerce overrides, ticket system integration
+        ├── archive-event.php        # Event listing page (uses filtering, pagination, event cards)
+        ├── single-event.php         # Single event page (details, gallery, purchase entry point)
+        ├── scanner.js               # QR scanner frontend logic (admin ticket validation)
+        ├── event-gallery.js         # Gallery interactions (lightbox, navigation, animations)
         ├── css/
-        └── template-parts/
+           ├── events/               # Event pages styling (cards, layout, filters)
+           ├── woocommerce/          # Custom WooCommerce styling (checkout, cart, UI tweaks)
+           ├── style.css             # Global theme styles
+           └── tickets.css           # Ticket-related UI (scanner, validation states)
+        ├── template-parts/
+           ├── event-card.php        # Reusable event card component (used in listings) 
+           └── event-gallery.php     # Dynamic gallery rendering + lightbox system 
+
 ```
 
 ---
